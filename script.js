@@ -25,8 +25,11 @@ console.log(socialMediasLinks);
 let texto02 = document.querySelector("#post02 .post-texto");
 console.log(texto02);
 
-let footerListRedes = document.querySelectorAll("footer .lista_redes li ")
+let footerListRedes = document.querySelectorAll("footer .lista_redes li");
 console.log(footerListRedes);
+
+let asideListRedes = document.querySelectorAll("aside .lista_redes li");
+console.log(asideListRedes);
 
 let textLinkPost01 = document.querySelector("#post01 .post-texto a");
 console.log(textLinkPost01);
@@ -40,8 +43,15 @@ console.log(formNameInput);
 let navListLinks = document.querySelectorAll("header nav ul .elementos_nav a");
 console.log(navListLinks);
 
-let strongAuthors = document.querySelectorAll("#posts .post .post-autor strong")
+let strongAuthors = document.querySelectorAll("#posts .post .post-autor strong");
 console.log(strongAuthors);
 
 let strongDates = document.querySelectorAll("#posts .post .post-data strong")
 console.log(strongDates);
+
+function percorrerLista(lista){
+    for (i = 0; i < lista.length; i++){
+    console.log(lista[i]);
+    }
+}
+percorrerLista(asideListRedes);
