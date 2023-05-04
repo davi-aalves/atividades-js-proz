@@ -13,11 +13,11 @@ console.log(form);
 let posts = document.getElementById("posts");
 console.log(posts);
 
-let postsdatas = document.getElementsByClassName("post-data");
-console.log(postsdatas);
+let postsDatas = document.getElementsByClassName("post-data");
+console.log(postsDatas);
 
-let poststexts = document.getElementsByClassName("post-texto");
-console.log(poststexts);
+let postsTexts = document.getElementsByClassName("post-texto");
+console.log(postsTexts);
 
 let socialMediasLinks = document.getElementsByClassName("lista_redes");
 console.log(socialMediasLinks);
