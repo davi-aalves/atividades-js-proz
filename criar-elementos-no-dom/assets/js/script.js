@@ -24,7 +24,7 @@ const arrayPostagens = [
 
 console.log(arrayPostagens[1]);
 
-for(let i = 0; i < arrayPostagens.length; i++){
+for(let i = 1; i < arrayPostagens.length; i++){
   // 1 - Criar um elemento:
   let article = document.createElement("article");
 
