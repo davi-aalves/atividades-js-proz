@@ -37,6 +37,10 @@ form button {
   margin-top: 2rem;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
 input {
   border: none;
   border-radius: 4px;
