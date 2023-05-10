@@ -1,17 +1,24 @@
+//Elementos capturados:
 const loginTitle = document.querySelector("h2");
 const loginButton = document.querySelector("button");
-
-loginTitle.style.color = "tomato";
+//Aplicando estilização via JS:
+loginTitle.style.color = "blue";
 loginTitle.style.fontSize = "2rem";
 
 loginButton.style.borderRadius = "10px";
 loginButton.style.backgroundColor = "orange";
 loginButton.style.width = "100%";
+//Simulando interação do usuário:
+// 1 - Username incorrect:
+const userLogin = document.getElementById("user-login");
+const userErrorText = document.querySelector(".error-text");
+console.log(userErrorText);
 
-const userInput = document.getElementById("user-login");
-const userError = document.getElementsByClassName("error-text");
-const passwordInput = document.getElementById("login-password");
+userLogin.classList.add("error");
+userErrorText.classList.add("visible");
+// 2 - Username correct, password incorrect:
+const loginPassword = document.querySelector("#login-password");
+const passwordErrorText = document.querySelector(".error-text");
+console.log(passwordErrorText);
 
-userInput.classList.add("correct");
-passwordInput.classList.add("error");
-userError[1].classList.add("visible");
+loginPassword.classList.add("error");
