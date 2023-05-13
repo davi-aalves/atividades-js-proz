@@ -38,9 +38,11 @@ usernameInput.addEventListener("change", (e)=> {
     // Adicionar estilos dinâmicos se o valor tiver menos de 3 caracteres
     usernameHelper.innerText = "Seu username precisa ter 3 ou mais caracteres";
     estilizarInputIncorreto(usernameInput, usernameHelper)
+    correctInputs.username = false
   } else {
     // Adicionar estilos dinâmicos se o valor estiver correto
     estilizarInputCorreto(usernameInput, usernameHelper);
+    correctInputs.username = true
   }
 })
 
@@ -58,10 +60,12 @@ emailInput.addEventListener("change", (e)=> {
   if(valor.includes("@") && valor.includes(".com")){
     // Adicionar estilos dinâmicos se o valor estiver correto
     estilizarInputCorreto(emailInput, emailHelper);
+    correctInputs.email = true
   } else {
     // Adicionar estilos dinâmicos se o valor tiver menos de 3 caracteres
     emailHelper.innerText = "Precisa inserir um email válido";
     estilizarInputIncorreto(emailInput, emailHelper);
+    correctInputs.email = false
   }
 })
 
@@ -79,8 +83,10 @@ senhaInput.addEventListener("blur", (e)=> {
   if(valor == ""){
     senhaHelper.innerText = "O campo de senha não pode estar vazio";
     estilizarInputIncorreto(senhaInput, senhaHelper);
+    correctInputs.senha = false
   }else{
-    estilizarInputCorreto(senhaInput, senhaHelper);    
+    estilizarInputCorreto(senhaInput, senhaHelper);
+    correctInputs.senha = true   
   }
 })
 
@@ -97,8 +103,32 @@ confSenhaInput.addEventListener("blur", (e)=> {
   
   if(valorConfSenha == senhaInput.value){
     estilizarInputCorreto(confSenhaInput, confSenhaHelper);
+    correctInputs.confirmaSenha = true
   }else{
     confSenhaHelper.innerText = "As senhas precisam ser iguais!";
-    estilizarInputIncorreto(confSenhaInput, confSenhaHelper);    
+    estilizarInputIncorreto(confSenhaInput, confSenhaHelper);
+    correctInputs.confirmaSenha = false    
+  }
+})
+
+// ---------- EVITAR ENVIO DO FORMULÁRIO ---------- //
+const submitButton = document.querySelector('button[type="submit"]');
+
+let correctInputs = {
+  username: true,
+  email: false,
+  senha: false,
+  confirmaSenha: false
+}
+
+submitButton.addEventListener("click", (e)=>{
+  if(correctInputs.username == false ||
+    correctInputs.email == false ||
+    correctInputs.senha == false ||
+    correctInputs.confirmaSenha == false){
+    e.preventDefault()
+    alert("É necessário que todos os campos obrigatórios estejam preenchidos.")
+  }else{
+    alert("Formulário enviado com sucesso.")
   }
 })
